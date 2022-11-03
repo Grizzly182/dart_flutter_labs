@@ -1,5 +1,5 @@
-void fizzbuzz({int n = 0}) {
-  for (int i = 1; i <= n; i++) {
+void fizzbuzz({int numsAmount = 0}) {
+  for (int i = 1; i <= numsAmount; i++) {
     if (i % 3 == 0) {
       if (i % 3 == 0 && i % 5 == 0) {
         print("fizzbuzz");
@@ -8,13 +8,12 @@ void fizzbuzz({int n = 0}) {
       }
     } else if (i % 5 == 0) {
       print("buzz");
-    } //else if
-    else {
+    } else {
       print("$i");
     }
   } //for
 }
 
-void main(List<String> args) {
-  fizzbuzz(n: 15);
+void main() {
+  fizzbuzz(numsAmount: 15);
 }
