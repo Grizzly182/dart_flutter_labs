@@ -1,11 +1,13 @@
 bool anagram({String first = "", String second = ""}) {
   first = first.toLowerCase();
   second = second.toLowerCase();
+
   int i = first.length - 1;
   int max1 = 0;
 
   int j = 0;
   int max2 = second.length - 1;
+
   while (i >= max1 && j <= max2) {
     if (!isAlphabetChar(first[i])) {
       i--;
