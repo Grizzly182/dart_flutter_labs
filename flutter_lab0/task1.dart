@@ -1,18 +1,19 @@
 void fizzbuzz({int numsAmount = 0}) {
   for (int i = 1; i <= numsAmount; i++) {
-    if (i % 3 == 0) {
-      if (i % 3 == 0 && i % 5 == 0) {
-        print("fizzbuzz");
-      } else {
-        print("fizz");
-      }
-    } else if (i % 5 == 0) {
+    bool byThree = i % 3 == 0;
+    bool byFive = i % 5 == 0;
+
+    if (byThree && byFive) {
+      print("fizzbuzz");
+    } else if (byThree) {
+      print("fizz");
+    } else if (byFive) {
       print("buzz");
     } else {
-      print("$i");
+      print(i);
     }
-  } //for
-}
+  }
+} //for
 
 void main() {
   fizzbuzz(numsAmount: 15);
