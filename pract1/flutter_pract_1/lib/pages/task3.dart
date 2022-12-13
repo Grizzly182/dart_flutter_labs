@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            "Гутен Морген!!",
+            "Good Morning!!",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
