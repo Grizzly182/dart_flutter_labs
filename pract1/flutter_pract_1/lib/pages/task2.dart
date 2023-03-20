@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Icon(Icons.star, color: Colors.black, size: 40.0),
               Icon(Icons.star, color: Colors.grey, size: 40.0),
               Icon(Icons.star, color: Colors.pink, size: 40.0),

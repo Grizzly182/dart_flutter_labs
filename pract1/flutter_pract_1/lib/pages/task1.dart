@@ -15,17 +15,17 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                color: Color.fromARGB(255, 255, 0, 0),
+                color: const Color.fromARGB(255, 255, 0, 0),
                 width: 50,
                 height: 100,
               ),
               Container(
-                color: Color.fromARGB(255, 255, 0, 0),
+                color: const Color.fromARGB(255, 255, 0, 0),
                 width: 50,
                 height: 50,
               ),
               Container(
-                color: Color.fromARGB(255, 255, 0, 0),
+                color: const Color.fromARGB(255, 255, 0, 0),
                 width: 50,
                 height: 25,
               )
