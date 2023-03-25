@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:homework_1/classes/HouseCardData.dart';
+import 'package:lw_5/classes/HouseCardData.dart';
 
 class HouseCard extends StatelessWidget {
   HouseCard({super.key, required this.cardData});
 
-  HouseCardData cardData;
+  final HouseCardData cardData;
+  double rating = (List<int> data) {
+    double sum = 0;
+    data.forEach((element) {
+      sum += element;
+    });
+    return sum / data.length;
+  }(cardData.ratings);
 
   @override
   Widget build(BuildContext context) {
@@ -47,24 +54,11 @@ class HouseCard extends StatelessWidget {
                   cardData.address,
                   overflow: TextOverflow.ellipsis,
                 ),
-                Text(
-                  "\$ ${cardData.price.toString()}",
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headlineSmall,
-                )
               ],
             ),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Last Updated: ${cardData.lastUpdate}"),
-                const Text("Price Per Night")
-              ],
-            ),
+          Row(
+            children: [Text()],
           )
         ],
       ),

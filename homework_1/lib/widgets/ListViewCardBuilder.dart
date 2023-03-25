@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:homework_1/classes/HouseCardData.dart';
 import 'HouseCard.dart';
@@ -38,7 +39,8 @@ class ListViewCardsBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        physics: const BouncingScrollPhysics(),
         itemCount: cardData.length,
         itemBuilder: ((context, index) {
           return HouseCard(cardData: cardData[index]);
