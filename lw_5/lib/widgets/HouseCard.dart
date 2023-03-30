@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:lw_5/classes/HouseCardData.dart';
 
-class HouseCard extends StatelessWidget {
-  HouseCard({super.key, required this.cardData});
+class HouseCard extends StatefulWidget {
+  HouseCard({super.key, this.cardData});
 
-  final HouseCardData cardData;
-  double rating = (List<int> data) {
+  HouseCardData? cardData;
+
+  @override
+  State<StatefulWidget> createState() => HouseCardState();
+}
+
+class HouseCardState extends State<HouseCard> {
+  late double rating = (List<int> data) {
     double sum = 0;
     data.forEach((element) {
       sum += element;
     });
-    return sum / data.length;
-  }(cardData.ratings);
+    return (sum / data.length);
+  }(widget.cardData!.ratings);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,7 @@ class HouseCard extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  cardData.name,
+                  widget.cardData!.name,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.titleLarge,
                 )
@@ -51,14 +57,27 @@ class HouseCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  cardData.address,
+                  widget.cardData!.address,
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
           ),
-          Row(
-            children: [Text()],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                ),
+                Text(
+                  "${rating.toStringAsFixed(2)} рейтинг",
+                  style: const TextStyle(fontSize: 16),
+                )
+              ],
+            ),
           )
         ],
       ),
