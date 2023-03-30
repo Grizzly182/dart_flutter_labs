@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         if (element.address
                                 .toLowerCase()
                                 .contains(query.toLowerCase()) ||
-                            element.name.contains(query)) {
+                            element.name.toLowerCase().contains(query)) {
                           dummyListData.add(element);
                         }
                       });
@@ -160,8 +160,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       });
                       return;
                     } else {
-                      _builder.cardData.clear();
-                      _builder.cardData.addAll(cardData);
+                      setState(() {
+                        _builder = ListViewCardsBuilder(cardData: cardData);
+                      });
                     }
                   },
                   child: const Text("Поиск"),
