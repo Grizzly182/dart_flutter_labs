@@ -136,6 +136,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 prefixIcon: const Icon(Icons.search),
                 suffix: ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                       foregroundColor: Colors.white,
                       backgroundColor: Colors.blue[800]),
                   onPressed: () {
